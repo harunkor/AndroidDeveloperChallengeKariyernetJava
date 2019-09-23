@@ -1,6 +1,6 @@
 # AndroidDeveloperChallengeKariyernetJava
 
- 
+ *Emülatör testi fotoları olduğunda bazı ui elemanları farklı görünebilir.
  
 ![](https://github.com/harunkor/AndroidDeveloperChallengeKariyernetJava/blob/master/Screenshot_1569274003.png?raw=true)
 

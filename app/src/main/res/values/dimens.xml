@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_title_marginbottom">60dp</dimen>
+    <dimen name="login_title_textsize">40sp</dimen>
+    <dimen name="edt_height_size">40dp</dimen>
+    <dimen name="edt_margin_start">25dp</dimen>
+    <dimen name="edt_margin_end">25dp</dimen>
+    <dimen name="margin_top">15dp</dimen>
+    <dimen name="radius_size">3dp</dimen>
+    <dimen name="drawable_padding">10dp</dimen>
+    <dimen name="padding_left">10dp</dimen>
+</resources>

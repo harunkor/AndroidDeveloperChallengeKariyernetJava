@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="orderPacket"
+            type="com.harunkor.androiddeveloperchallengekariyernetjava.model.Order" />
+
+        <variable
+            name="handler"
+            type="com.harunkor.androiddeveloperchallengekariyernetjava.utils.Handler" />
+
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:onClick="@{(v)-> handler.onClick(v)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{orderPacket.date}"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="#4c4c4c"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{orderPacket.month}"
+                android:textColor="#4c4c4c"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/date"
+                app:layout_constraintStart_toStartOf="@+id/date"
+                app:layout_constraintTop_toBottomOf="@+id/date" />
+
+
+            <TextView
+                android:id="@+id/marketname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="#4c4c4c"
+                android:textSize="16sp"
+                android:text="@{orderPacket.marketName}"
+                app:layout_constraintStart_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:background="#999999"
+                app:layout_constraintBottom_toBottomOf="@+id/month"
+                app:layout_constraintStart_toEndOf="@+id/date"
+                app:layout_constraintTop_toTopOf="@+id/date" />
+
+            <TextView
+                android:id="@+id/ordername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{orderPacket.orderName}"
+                android:textColor="#4c4c4c"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/marketname"
+                app:layout_constraintTop_toBottomOf="@+id/marketname" />
+
+
+            <View
+                android:id="@+id/statuview"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@{orderPacket.statuColor}"
+                app:layout_constraintStart_toStartOf="@+id/ordername"
+                app:layout_constraintTop_toBottomOf="@+id/ordername" />
+
+            <TextView
+                android:id="@+id/productstate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textColor="@{orderPacket.statuColor}"
+                android:text="@{orderPacket.productState}"
+                app:layout_constraintStart_toEndOf="@+id/statuview"
+                app:layout_constraintTop_toBottomOf="@+id/ordername" />
+
+            <ImageView
+                android:id="@+id/imgrightarrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/ic_chevron_right_black_24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/marketname" />
+
+            <TextView
+                android:id="@+id/productprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="#4c4c4c"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@{orderPacket.productPriceAddTl}"
+                app:layout_constraintEnd_toEndOf="@+id/imgrightarrow"
+                app:layout_constraintTop_toBottomOf="@+id/imgrightarrow" />
+
+            <LinearLayout
+                android:id="@+id/expandlelist"
+                android:visibility="@{orderPacket.isVisibility}"
+                android:layout_width="0dp"
+                android:background="#e1e3e4"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/statuview"
+                app:layout_constraintTop_toBottomOf="@+id/statuview">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/UnderlineText"
+                    android:textSize="15sp"
+                    android:text="@{orderPacket.productDetail.orderDetail}" />
+
+
+                <TextView
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    style="@style/UnderlineText"
+                    android:textSize="15sp"
+                    android:text="@{orderPacket.orderSummaryPriceAddTl}" />
+
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+</layout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MARKETİM</string>
+    <string name="giris">Giriş</string>
+    <string name="login_title_text">MARKETİM</string>
+    <string name="kullanici_adi">Kullanıcı Adı</string>
+    <string name="sifre">Şifre</string>
+
+    <string name="username">kariyer</string>
+    <string name="password">2019ADev</string>
+
+</resources>

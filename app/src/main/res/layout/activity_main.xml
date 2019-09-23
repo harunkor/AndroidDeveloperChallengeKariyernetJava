@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="orderAdapter"
+            type="com.harunkor.androiddeveloperchallengekariyernetjava.adapter.OrderRecyclerViewAdapter" />
+
+
+        <variable
+            name="handler"
+            type="com.harunkor.androiddeveloperchallengekariyernetjava.utils.Handler" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/myRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:adapter="@{orderAdapter}"
+            android:scrollbars="vertical"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <Button
+                android:id="@+id/myorder"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/myorder_btn_shape"
+                android:bottomLeftRadius="@dimen/radius_size"
+                android:bottomRightRadius="@dimen/radius_size"
+                android:text="Siparişlerim"
+                android:textColor="@drawable/myorder_text_color"
+                android:topLeftRadius="@dimen/radius_size"
+                android:topRightRadius="@dimen/radius_size" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/login_btn_shape"
+                android:bottomLeftRadius="@dimen/radius_size"
+                android:bottomRightRadius="@dimen/radius_size"
+                android:text="Çıkış Yap"
+                android:onClick="@{(v)-> handler.onClick(v)}"
+                android:textColor="@android:color/white"
+                android:topLeftRadius="@dimen/radius_size"
+                android:topRightRadius="@dimen/radius_size" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
